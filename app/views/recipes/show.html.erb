@@ -1,10 +1,19 @@
 <h2><%= @recipe.name %></h2>
-<h3><%= @recipe.user %> </h3>
+<h3><%= @recipe.author %> </h3>
 <p><%= @recipe.description %> </p>
 
 <%= link_to "Back", root_path %>
+
+<% if user_signed_in? %>
+
+<% if @recipe.user_id == current_user.id%>
 <%= link_to "Edit", edit_recipe_path(@recipe) %>
 <%= link_to "Delete", recipe_path(@recipe), method: :delete, data: { confirm: "Are you sure you want to delete>"} %>
+
+<% end %>
+
+
+<% end %>
 
 
 

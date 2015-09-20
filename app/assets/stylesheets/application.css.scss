@@ -13,5 +13,19 @@
  *= require_tree .
  *= require_self
  */
+ @import url(http://fonts.googleapis.com/css?family=Lora|Ubuntu:300,400,500);
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+
+ .recipe {
+
+ 	height: 350px;
+ 	width: 250px;
+
+ } 
+
+.recipe-show {
+	height: 475 px;
+	width: 325px;
+}

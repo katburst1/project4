@@ -1,11 +1,22 @@
 class RecipesController < ApplicationController
 	before_action :find_recipe, only: [:show, :edit, :update, :destroy]
-
+	before_action :authenticate_user!, only: [:new, :edit]
 	def index
+		if params[:category].blank?
 		@recipes = Recipe.all.order("created_at DESC")
+	else
+		@category_id = Category.find_by(name: params[:category]).id
+		@recipes = Recipe.where(:category_id => @category_id).order("created_at DESC")
+	end
 	end
 
 	def show
+		if @recipe.reviews.blank?
+			@average_review = 0
+		else
+			@average_review = @recipe.reviews.average(:rating).round(2) 
+		end
+
 	end
 
 	def new
@@ -45,7 +56,7 @@ class RecipesController < ApplicationController
 	private
 
 		def recipe_params
-			params.require(:recipe).permit(:name, :description, :author, :category_id)
+			params.require(:recipe).permit(:name, :description, :author, :category_id, :recipe_img)
 		end
 
 		def find_recipe

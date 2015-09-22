@@ -13,19 +13,298 @@
  *= require_tree .
  *= require_self
  */
- @import url(http://fonts.googleapis.com/css?family=Lora|Ubuntu:300,400,500);
- @import "bootstrap-sprockets";
- @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Lora|Ubuntu:300,400,500); 
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 
- .recipe {
+@mixin background-tile {
+	box-sizing: border-box;
+	background-image: #fff;
+	border-radius: 20px;
+	box-shadow: 3px 3px 5px 6px #ccc;
+	padding: 1.5em 1.25em;
+}
 
- 	height: 350px;
- 	width: 250px;
 
- } 
+
+
+body {
+	background-color: #f0f0f0;
+	font-family: 'Lora', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 300;
+}
+
+p.alert, p.notice {
+	margin: 0;
+}
+
+
+
+
+.navbar {
+	font-family: 'Ubuntu', sans-serif;
+	text-transform: uppercase;
+}
+.navbar-default {
+	background-color: #192;
+	padding-bottom: 5px;
+	padding-top: 5px;
+
+	.navbar-nav > li > a {
+		color: #104;
+		&:hover {
+			color: darken(#f1c40e, 5%);
+			transition: 0.5s;
+		}
+	}
+
+	.navbar-header {
+
+		.navbar-brand {
+			color: #104;
+			letter-spacing: 1.4px;
+		}
+
+	}
+
+	.dropdown-menu > li > a:hover {
+		background-color: darken(#336600, 5%);
+		color: #aaa;
+	}
+
+	.navbar-nav > .open > a, .navbar-nav > .open > a:hover, .navbar-nav > .open > a:focus {
+		background-color: darken(#336600, 5%);
+		color: #aaa;	
+	}
+
+}
+
+.dropdown-menu > .active > a {
+	background-color: #336600;
+	color: #aaa;
+}
+
+
+/* Button/link styles */
+
+.btn-custom {
+	color: darken(#336600, 5%);
+	background-color: #fff;
+	border: 5px solid darken(#336600, 5%);
+	padding: 10px 20px;
+	border-radius: 5px;
+	font-family: 'Ubuntu', sans-serif;
+	&:hover {
+		text-decoration: none;
+		background-color: darken(#336600, 5%);
+		color: #aaa;
+		transition: 0.5s;
+	}
+}
+
+.btn-custom2 {
+	color: #444;
+	background-color: #aaa;
+	border: 1px solid #333;
+	padding: 8px 20px;
+	border-radius: 5px;
+	font-family: 'Ubuntu', sans-serif;
+	&:hover {
+		text-decoration: none;
+		background-color: #555;
+		color: #aaa;
+		transition: 0.5s;
+	}	
+}
+
+.links {
+
+	.btn-custom {
+		padding: 3px 10px;
+		font-weight: 100;
+	}
+
+}
+
+.recipe-links {
+
+	.btn-custom {
+		padding: 3px 10px;
+		font-weight: 300;
+		margin-top: 40px;	
+	}
+
+}
+
+
+
+.recipe {
+	height: 350px;
+	width: 250px;
+	margin-bottom: 40px;
+	@include background-tile;
+}
 
 .recipe-show {
-	height: 475 px;
+	height: 475px;
 	width: 325px;
+	@include background-tile;
+}
+
+.recipe-info {
+	@include background-tile;
+
+	.recipe-title {
+		margin-top: 0;
+		font-size: 2em;
+	}
+
+	.avg-rating {
+		font-size: 1.5em;
+		margin-top: 15px;
+		margin-bottom: 5px;
+	}
+
+	.number-of-reviews {
+		font-size: 0.85em;
+		font-style: italic;
+	}
+
+	.recipe-author {
+		font-size: 1.5em;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		span {
+			font-size: 0.80em;
+		}	
+	}
+
+	.recipe-desc {
+		font-size: 1.05em;
+		line-height: 1.5;
+		margin-bottom: 15px;
+		margin-top: 15px;
+	}
+
+}
+
+
+
+
+.current-category {
+	margin-bottom: 60px;
+}
+
+
+
+.reviews {
+
+	@include background-tile;
+	margin-top: 40px;
+
+	h1 {
+		margin-top: 0;
+		margin-bottom: 15px;
+		font-size: 2em;
+	}
+
+	.review {
+		border-bottom: 5px solid gainsboro;
+		margin-bottom: 20px;
+		padding-bottom: 20px;
+
+		.review-comment {
+			font-size: 1.05em;
+			line-height: 1.5;
+		}
+
+	}
+
+	.new-review {
+		padding-top: 10px;
+	}
+
+}
+
+
+
+.new-recipe-form {
+	@include background-tile;
+
+	h1 {
+		margin-top: 5;
+	}
+
+	#category_id {
+		margin-bottom: 20px;
+	}
+
+	#recipe_recipe_img {
+		margin-bottom: 20px;
+	}
+
+}
+
+
+.edit-recipe-form {
+
+	@include background-tile;
+
+	h1 {
+		margin-top: 5;
+	}
+
+	#recipe_category_id {
+		margin-bottom: 20px;
+	}
+
+	#recipe_recipe_img {
+		margin-bottom: 20px;
+	}
+
+}
+
+
+
+.new-review-form, .edit-review-form {
+	@include background-tile;
+
+	h1 {
+		margin-top: 5;
+	}
+
+	#rating-form {
+		margin-bottom: 20px;
+
+		label {
+			display: block;
+		}
+
+	}
+
+}
+
+
+
+.signup-form {
+	@include background-tile;
+
+	h2 {
+		margin-top: 5;
+	}
+
+}
+
+.login-form {
+	@include background-tile;
+
+	h2 {
+		margin-top: 5;
+	}
+
 }

@@ -10,14 +10,14 @@ class RecipesController < ApplicationController
 	end
 	end
 
-	def show
-		if @recipe.reviews.blank?
-			@average_review = 0
-		else
-			@average_review = @recipe.reviews.average(:rating).round(2) 
-		end
+	# def show
+	# 	# if 
+	# 	@recipe.reviews.blank?
+	# 	@average_review = 0
+	# 	# else
+	# 	# 	@average_review = @recipe.reviews.average(:rating).round(2) 
+	# 	end
 
-	end
 
 	def new
 		@recipe = current_user.recipes.build
@@ -35,7 +35,7 @@ class RecipesController < ApplicationController
 	end
 
 	def edit
-		@categories = Category.all.map{ |c| [c.name, c.id] }
+		@categories = Category.all.map{ |f| [f.name, f.id] }
 	end
 
 	def update

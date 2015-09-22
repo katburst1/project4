@@ -1,4 +1,5 @@
 <h1 class="current"><%= params[:category] %></h1>
+
 <% if @recipes.count == 0 %>
 <h1> There are no recipes in this category yet </h1>
 <% else %> 
@@ -17,4 +18,4 @@
 </div>
 	<% end %>
 
-
+<%= link_to "Add Recipe", new_recipe_path %>

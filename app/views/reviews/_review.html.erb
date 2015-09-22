@@ -1,5 +1,7 @@
+<div class="review">
+
 <div class="review-rating" data-score="<%= review.rating %>"></div>
-<p><%= review.comment %></p>
+<p class="review-comment"><%= review.comment %></p>
 
 
  <% if user_signed_in? %>
@@ -7,9 +9,11 @@
 
 	<% if review.user_id == current_user.id %>
 
-<%= link_to "Edit", edit_recipe_review_path(review.recipe, review) %>
-<%= link_to "Delete", recipe_review_path(review.recipe, review), method: :delete, data: {confirm: "Are you sure?" } %>
+<div class="links btn-group">
+<%= link_to "Edit", edit_recipe_review_path(review.recipe, review), class: "btn btn-custom" %>
+<%= link_to "Delete", recipe_review_path(review.recipe, review),:class => "btn btn-custom", method: :delete, data: {confirm: "Are you sure?" } %>
 
 <% end %>
+</div>
 
 <% end %>

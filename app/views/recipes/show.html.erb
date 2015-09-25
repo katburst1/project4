@@ -27,8 +27,10 @@
 
 		<%= render @recipe.reviews %>
 
-		<div>
-			<%= link_to "Add Review", new_recipe_review_path(@recipe), class: "btn-custom" %>
+		<div class="links btn-group">
+			<%= link_to "Add Review", new_recipe_review_path(@recipe), class: "btn btn-custom" %>
+
+	<%= link_to "Back", root_path, class: "btn btn-custom" %>
 		</div>
 	</div>
 
@@ -37,8 +39,6 @@
 </div>
 
  <div class="links btn-group">
-
-	<%= link_to "Back", root_path, class: "btn btn-custom" %>
 
 	<% if user_signed_in? %>
 
@@ -75,6 +75,4 @@ $('.average-review-rating').raty({
 	};
 });
 </script>
-
-
 

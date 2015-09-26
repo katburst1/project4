@@ -21,11 +21,27 @@
 @mixin background-tile {
 	box-sizing: border-box;
 	background-image: #fff;
-	border-radius: 20px;
-	box-shadow: 3px 3px 5px 6px #ccc;
+	border-radius: 10px;
+	box-shadow: 2px 2px 5px 6px #fff;
 	padding: 1.5em 1.25em;
 }
 
+.title {
+	text-align: center;
+	font-family: 'Ubuntu', sans-serif;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	font-weight: 300;
+	letter-spacing: 1.4px;
+	color: black;
+
+
+}
+
+.desc{
+	font-weight: 500;
+	font-size: large;
+}
 
 
 
@@ -51,7 +67,7 @@ p.alert, p.notice {
 	text-transform: uppercase;
 }
 .navbar-default {
-	background-color: #192;
+	background-color: #339900;
 	padding-bottom: 5px;
 	padding-top: 5px;
 
@@ -73,35 +89,35 @@ p.alert, p.notice {
 	}
 
 	.dropdown-menu > li > a:hover {
-		background-color: darken(#336600, 5%);
+		background-color: darken(#339900, 5%);
 		color: #aaa;
 	}
 
 	.navbar-nav > .open > a, .navbar-nav > .open > a:hover, .navbar-nav > .open > a:focus {
-		background-color: darken(#336600, 5%);
+		background-color: darken(#339900, 5%);
 		color: #aaa;	
 	}
 
 }
 
 .dropdown-menu > .active > a {
-	background-color: #336600;
+	background-color: #339900;
 	color: #aaa;
 }
 
-
-/* Button/link styles */
-
+/*buttons
+*/
 .btn-custom {
-	color: darken(#336600, 5%);
+	color: darken(#339900, 5%);
 	background-color: #fff;
-	border: 5px solid darken(#336600, 5%);
-	padding: 10px 20px;
-	border-radius: 5px;
+	border: 2px solid darken(#339900, 5%);
+	padding: 5px 10px;
+	border-radius: 1px;
+	position: bottom;
 	font-family: 'Ubuntu', sans-serif;
 	&:hover {
 		text-decoration: none;
-		background-color: darken(#336600, 5%);
+		background-color: darken(#339900, 5%);
 		color: #aaa;
 		transition: 0.5s;
 	}

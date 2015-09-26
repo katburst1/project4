@@ -10,16 +10,9 @@
 
 		<div class="recipe-info">
 			<h2 class="recipe-title"><%= @recipe.name %></h2>
-			<h3 class="recipe-author"><%= @recipe.author %></h3>
-			<h2 class="avg-rating">Average Rating</h2>
+			<h3 class="recipe-author">Posted by: <%= @recipe.author %></h3>
 			<div class="average-review-rating" data-score=<%= @average_review %>></div>
-			<span class="number-of-reviews">Based on <%= @recipe.reviews.count %> reviews</span>
-			<p class="recipe-desc"><%= @recipe.description %></p>
-		</div>
-	</div>
-</div>
-
- <div class="links btn-group">
+			<h5 class="recipe-desc"><p class="desc">Ingredients and Description: </p><%= @recipe.description %></h5>
 
 	<% if user_signed_in? %>
 
@@ -33,6 +26,12 @@
 
 
 <% end %>
+		</div>
+	</div>
+</div>
+
+ <div class="links btn-group">
+
 
 </div>
 <div class="row">
@@ -49,7 +48,6 @@
 	<%= link_to "Back", root_path, class: "btn btn-custom" %>
 		</div>
 	</div>
-
 </div>
 
 </div>
